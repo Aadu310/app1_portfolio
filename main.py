@@ -11,3 +11,6 @@ with col2:
     st.title("Adarsh Manjunath")
     content = '''An Amateur programmer who wants learn to program effectively and efficiently.'''
     st.info(content)
+
+contact_me = '''Below you can find the apps I built while learning Python. Feel free to contact me!'''
+st.write(contact_me)
