@@ -17,7 +17,8 @@ with col2:
 contact_me = '''Below you can find the apps I built while learning Python. Feel free to contact me!'''
 st.write(contact_me)
 
-col3, col4 = st.columns(2)
+# 3 columns are created with dimensions as 1.5, 0.5 and 1.5
+col3, empty_col, col4 = st.columns([1.5,0.5,1.5])
 
 df = pandas.read_csv("data.csv", sep=";")
 
@@ -25,8 +26,14 @@ df = pandas.read_csv("data.csv", sep=";")
 with col3:
     for index, row in df[:10].iterrows():
         st.title(row["title"])
+        st.write(row["description"])
+        st.image("images/"+row["image"])
+        st.write(f"[Source Code]({row['url']})")
 
 #displays 10-20 rows in column4
 with col4:
     for index, row in df[10:].iterrows():
         st.title(row["title"])
+        st.write(row["description"])
+        st.image("images/" + row["image"])
+        st.write(f"[Source Code]({row['url']})")
